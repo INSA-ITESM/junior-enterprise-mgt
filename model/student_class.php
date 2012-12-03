@@ -32,7 +32,7 @@ class student {
 		$this->areas = $areas;
 	}
 	
-	//Class's methods
+	// Getters & Setters
 	public function setId($temp) {
   		$this->id = $temp;
 	}
@@ -103,6 +103,50 @@ class student {
 	
 	public function getAreas() {
   		return $this->areas;
+	}
+
+	// Entity manipulation
+
+	/**
+	* Get an enterprise by its unique ID
+	* @param id Enterprise unique identifier
+	* @return An initialize enterprise instance representing the enterprise
+	* @throws Exception Raised in case the enterprise has not been found.
+	*/
+	public static function getEntrepriseById( $id ) {
+		// TODO
+	}
+
+	/**
+	* Get all the recorded enterprises
+	* @return An array containing all the recorded enterprises
+	*/
+	public static function getEnterprises() {
+		// TODO
+	}
+
+	/**
+	* Record a new enterprise into the platform
+	* @throw Exception Raised if an error occured while recording data
+	*/
+	public static function addEnterprise( $photo, $name, $mail, $cell, $degree, $semester, $skill, $areas ) {
+		// TODO
+	}
+
+	/**
+	* Update an existing enterprise of the platform
+	* @throw Exception Raised if an error occured while updating data
+	*/
+	public static function updateEnterprise( $id, $photo, $name, $mail, $cell, $degree, $semester, $skill, $areas ) {
+		// TODO
+	}
+
+	/**
+	* Erase an enterprise from the platform
+	* @throw Exception Raised if an error occured while erasing data
+	*/
+	public static function removeEnterprise( $id ) {
+		// TODO
 	}
 }
 
