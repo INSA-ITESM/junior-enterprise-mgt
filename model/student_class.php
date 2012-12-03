@@ -165,14 +165,14 @@ class student {
                 /* Preparing statment then execute it */
                 $query = "SELECT * FROM student";
 
-                $result = mysql_query($query, $cnx);
-                if( !$result ) {
+                $res = mysql_query($query, $cnx);
+                if( !$res ) {
                         $db->close();
                         throw new exception( "An error occured while executing a request : ". mysql_error() );
                 }
 
 		/* For each row found, instantiate the object and then, push it into the array */
-                while( $row = mysql_fetch_array($result) ) {
+                while( $row = mysql_fetch_array($res) ) {
 
 			$currentStudent = new student( $id, $row['url_photo_student'], $row['name_student'], $row['mail_student'], 
                                                 $row['cellphone_student'], $row['degree_student'], $row['semester_student'], 

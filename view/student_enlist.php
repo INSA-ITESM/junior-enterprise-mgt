@@ -55,10 +55,73 @@
 
  <div id="information">
  <div name="div_dynamic" id="div_dynamic" class="div_dynamic">
-   <p>&nbsp;</p>
-   <p>&nbsp;</p>
-   <p>&nbsp;</p>
-   <pre>                                   INFORMATION HERE</pre>
+
+ <form id="student_enlist" method="post" action="../controller/student_enlist_controller.php" enctype="multipart/form-data">
+
+                <table id="table_init" align="center" cellspacing="10px" cellpadding="10px">
+                <tbody>
+                        <tr>
+                        <td id="cell_form_text">
+                                <label id="form_new">Name: </label>
+                        </td>
+			<td>
+                        	<input type="text" name="name" />
+                        </td>
+			</tr><tr>
+                        <td id="cell_form_text">
+                                <label id="form_new">Mail address: </label>
+                        </td>
+			<td>
+                        	<input type="text" name="mail" />
+                        </td>
+			</tr><tr>
+                        <td id="cell_form_text">
+                                <label id="form_new">Cellphone: </label>
+                        </td>
+			<td>
+                        	<input type="text" name="cell" />
+                        </td>
+			</tr><tr>
+                        <td id="cell_form_text">
+                                <label id="form_new">Degree: </label>
+                        </td>
+			<td>
+                        	<input type="text" name="degree" />
+                        </td>
+			</tr><tr>
+                        <td id="cell_form_text">
+                                <label id="form_new">Semester: </label>
+                        </td>
+			<td>
+                        	<input type="text" name="semester" />
+                        </td>
+			</tr><tr>
+                        <td id="cell_form_text">
+                                <label id="form_new">Skills: </label>
+                        </td>
+			<td>
+                        	<input type="text" name="skill" />
+                        </td>
+			</tr><tr>
+                        <td id="cell_form_text">
+                                <label id="form_new">Areas: </label>
+                        </td>
+			<td>
+                        	<input type="text" name="areas" />
+                        </td>
+			</tr>
+			<tr>
+			<td></td>
+			<td>
+				<input type="submit" value="Add student">
+			</td>
+			</tr>
+		</tbody>
+		</tbody>
+		</table>
+
+ </form>
+
  </div>   
  </div>
  

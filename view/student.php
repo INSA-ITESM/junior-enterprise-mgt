@@ -1,3 +1,8 @@
+<?php
+            require_once '../model/student_class.php';
+            session_start();
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -55,10 +60,34 @@
 
  <div id="information">
  <div name="div_dynamic" id="div_dynamic" class="div_dynamic">
-   <p>&nbsp;</p>
-   <p>&nbsp;</p>
-   <p>&nbsp;</p>
-   <pre>                                   INFORMATION HERE</pre>
+
+   <table id='table_init' align="center" cellspacing="10px" cellpadding="10px">
+                <tbody>
+                         <?php
+
+            $array_students = unserialize($_SESSION['students']);
+
+            //table's header
+                        echo "<tr id='row_init_header' align='center'>";
+                                echo "<td id='cell_init_header'>NAME</td>";
+                                echo "<td id='cell_init_header'>MAIL</td>";
+				echo "<td id='cell_init_header'>SEMESTER</td>";
+                                echo "<td id='cell_init_header'>SKILL</td>";
+                        echo "</tr>";
+
+             foreach ($array_students as $student)
+             {
+                echo "<tr id='row_init' align='center'>";
+                                        echo "<td id='cell_init'>".$student->getName()."</td>";
+                                        echo "<td id='cell_init'>".$student->getMail()."</td>";
+                                        echo "<td id='cell_init'>".$student->getSemester()."</td>";
+                                        echo "<td id='cell_init'>".$student->getSkill()."</td>";
+                                echo "</tr>";
+             }
+             ?>
+        </tbody>
+     </table>
+
  </div>   
  </div>
  
