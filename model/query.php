@@ -85,7 +85,7 @@
 			//To read the result of the SQL sentence, we need to use exactly this while loop
 			while($rows=mysql_fetch_array($result)){
 					
-				$array[$counter] = new enterprise($rows[0],$rows[1],$rows[2],$rows[3],$rows[4],$rows[5]);//In this part we do an enterprise (object) array; the row is exactly like the database was created. If you use the SQL file that we send you, you can only see the picture (jr_enterprise_database.png) to know how the order of the atributes is
+				$array[$counter] = new project($rows[0],$rows[1],$rows[2],$rows[3],$rows[4],$rows[5]);//In this part we do a project (object) array; the row is exactly like the database was created. If you use the SQL file that we send you, you can only see the picture (jr_enterprise_database.png) to know how the order of the atributes is
 		
 				$counter++;
 		
