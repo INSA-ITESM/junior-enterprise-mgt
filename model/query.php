@@ -100,7 +100,7 @@
 				
 			$db->connect();
 		
-			$query = "INSERT INTO project (id_entreprise,name_project,status_project,start_date_project,tasks_project) VALUES  ('$id_entreprise', '$name_project','$status_project','$start_date','$tasks');";
+			$query = "INSERT INTO project (id_enterprise,name_project,status_project,start_date_project,tasks_project) VALUES  ('$id_entreprise', '$name_project','$status_project','$start_date','$tasks');";
 				
 				
 			$conec= $db->getConnection();

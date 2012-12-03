@@ -55,10 +55,32 @@
 
  <div id="information">
  <div name="div_dynamic" id="div_dynamic" class="div_dynamic">
-   <p>&nbsp;</p>
-   <p>&nbsp;</p>
-   <p>&nbsp;</p>
-   <pre>                                   INFORMATION HERE</pre>
+   <table id='table_init' align="center" cellspacing="10px" cellpadding="10px">
+   		<tbody>
+			 <?php 
+            require_once '../model/project_class.php'; 
+            session_start();
+            
+            $array_project = unserialize($_SESSION['projects']);
+             
+            //table's header
+			echo "<tr id='row_init_header' align='center'>";
+				echo "<td id='cell_init_header'>PROJECT NAME</td>";
+				echo "<td id='cell_init_header'>STATUS</td>";
+				echo "<td id='cell_init_header'>START DATE</td>";
+			echo "</tr>"; 
+             
+             foreach ($array_project as $project)
+             { 
+              	echo "<tr id='row_init' align='center'>";
+					echo "<td id='cell_init'>".$project->getName()."</td>";
+					echo "<td id='cell_init'>".$project->getStatus()."</td>";
+					echo "<td id='cell_init'>".$project->getStartDate()."</td>";
+				echo "</tr>";
+             }
+             ?>
+     	</tbody>
+     </table>
  </div>   
  </div>
  

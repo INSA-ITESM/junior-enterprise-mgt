@@ -55,10 +55,69 @@
 
  <div id="information">
  <div name="div_dynamic" id="div_dynamic" class="div_dynamic">
-   <p>&nbsp;</p>
-   <p>&nbsp;</p>
-   <p>&nbsp;</p>
-   <pre>                                   INFORMATION HERE</pre>
+ <form id="project_enlist" name="project_enlist" method="post" action="../controller/project_enlist_controller.php" enctype="multipart/form-data">
+   
+<table id="table_init" align="center" cellspacing="10px" cellpadding="10px">
+        	<tbody>
+           		<tr>
+                	<td id="cell_form_text">
+                   		<label id="form_new">Id of enterprise: </label>
+                   	</td>
+                                  
+                    <td>
+                    	<input type="text" name="id_enterprise" id="id_enterprise" />
+                    </td>
+				</tr>
+                              
+           		<tr>
+                	<td id="cell_form_text">
+                   		<label id="form_new">Name of project: </label>
+                   	</td>
+                                  
+                    <td>
+                    	<input type="text" name="name_project" id="name_project" />
+                    </td>
+				</tr>
+                
+                <tr>
+                	<td id="cell_form_text">
+                   		<label id="form_new">Status of project: </label>
+                   	</td>
+                                  
+                    <td>
+                    	<input type="text" name="status_project" id="status_project" />
+                    </td>
+				</tr>
+                
+                <tr>
+                	<td id="cell_form_text">
+                   		<label id="form_new">Start date: </label>
+                   	</td>
+                                  
+                    <td>
+                    	<input type="text" name="start_date_project" id="start_date_project" />
+                    </td>
+				</tr>
+                
+                <tr>
+                	<td id="cell_form_text">
+                   		<label id="form_new">Tasks: </label>
+                   	</td>
+                                  
+                    <td>
+                    	<input type="text" name="tasks_project" id="tasks_project" />
+                    </td>
+				</tr>
+                              
+                    <td>
+                    	<input type="submit" id="sumit_form" value="Save"/>
+                    </td>
+                                  
+                </tr>
+                            
+			</tbody>
+		</table>
+		</form>
  </div>   
  </div>
  
