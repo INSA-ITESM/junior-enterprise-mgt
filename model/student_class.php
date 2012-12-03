@@ -192,7 +192,23 @@ class student {
 	* @throw Exception Raised if an error occured while recording data
 	*/
 	public static function addStudent( $photo, $name, $mail, $cell, $degree, $semester, $skill, $areas ) {
-		// TODO
+
+		$db = new data_base();
+
+                /* Connecting to the database */
+                $db->connect();
+                $cnx = $db->getConnection();
+
+                /* Preparing statment then execute it */
+                $query = "INSERT INTO student (url_photo_student, name_student, mail_student, cellphone_student, degree_student, semester_student, skill_student, areas_student) VALUES ('".$photo."', '".$name."', '".$mail."', '".$cell."', '".$degree."', '".$semester."', '".$skill."', '".$areas."' )";
+
+		$result = mysql_query( $query, $cnx );
+		if( !$result ) {
+			$db->close();
+			throw new exception( "An error occured while recording data : ".mysql_error );
+		}
+
+		$db->close();
 	}
 
 	/**
@@ -200,7 +216,23 @@ class student {
 	* @throw Exception Raised if an error occured while updating data
 	*/
 	public static function updateStudent( $id, $photo, $name, $mail, $cell, $degree, $semester, $skill, $areas ) {
-		// TODO
+		
+		$db = new data_base();
+
+		/* Connecting to the database */
+                $db->connect();
+                $cnx = $db->getConnection();
+
+                /* Preparing statment then execute it */
+                $query = "UPDATE student SET url_photo_student = '".$photo."', name_student = '".$name."', mail_student = '".$mail."', cellphone_student = '".$cell."', degree_student = '".$degree."', semester_student = '".$semester."', skill_student = '".$skill."', areas_student = '".$areas."' WHERE id_student = ".$id;
+
+                $result = mysql_query( $query, $cnx );
+                if( !$result ) {
+                        $db->close();
+                        throw new exception( "An error occured while updating data : ".mysql_error );
+                }
+
+		$db->close();		
 	}
 
 	/**
@@ -208,7 +240,23 @@ class student {
 	* @throw Exception Raised if an error occured while erasing data
 	*/
 	public static function removeStudent( $id ) {
-		// TODO
+
+		$db = new data_base();
+
+		/* Connecting to the database */
+                $db->connect();
+                $cnx = $db->getConnection();
+
+                /* Preparing statment then execute it */
+                $query = "DELETE FROM student WHERE id_student = ".$id;
+
+                $result = mysql_query( $query, $cnx );
+                if( !$result ) {
+                        $db->close();
+                        throw new exception( "An error occured while removing data : ".mysql_error );
+                }
+
+		$db->close();
 	}
 }
 
