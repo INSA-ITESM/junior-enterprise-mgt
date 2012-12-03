@@ -3,6 +3,8 @@
 
 	require_once "database_settings.php";
 	require_once "enterprise_class.php";
+	require_once "project_class.php";
+	require_once "student_class.php";
 
 	class query{
 		
@@ -59,6 +61,64 @@
 			
 			$conec= $db->getConnection();
 
+			//In this case, the method return anything.
+			mysql_query($query, $conec) or die("ERROR: ".mysql_error());
+		}
+		
+		
+		public function getArrayProject(){
+				
+			$counter=0;
+				
+			$array[] = array();
+			$db = new data_base();
+				
+			$db->connect();
+		
+			$query = "SELECT * FROM project;";//You need to mody with your SQL sentence
+				
+			$conec= $db->getConnection();
+				
+			//In this case, we requested information from the database so the SQL sentence return a array with the result and we need to store in a variable
+			$result = mysql_query($query, $conec) or die("ERROR: ".mysql_error());
+				
+			//To read the result of the SQL sentence, we need to use exactly this while loop
+			while($rows=mysql_fetch_array($result)){
+					
+				$array[$counter] = new project($rows[0],$rows[1],$rows[2],$rows[3],$rows[4],$rows[5]);//In this part we do a project (object) array; the row is exactly like the database was created. If you use the SQL file that we send you, you can only see the picture (jr_enterprise_database.png) to know how the order of the atributes is
+		
+				$counter++;
+		
+			}
+		
+			return $array;
+		}
+		
+		public function setNewProject($id_entreprise, $name_project,$status_project,$start_date,$tasks){
+				
+			$db = new data_base();
+				
+			$db->connect();
+		
+			$query = "INSERT INTO project (id_entreprise,name_project,status_project,start_date_project,tasks_project) VALUES  ('$id_entreprise', '$name_project','$status_project','$start_date','$tasks');";
+				
+				
+			$conec= $db->getConnection();
+		
+			//In this case, the method return anything.
+			mysql_query($query, $conec) or die("ERROR: ".mysql_error());
+		}
+		
+		public function modifyProject($id_project, $id_entreprise, $name_project,$status_project,$start_date,$tasks){
+			$db = new data_base();
+				
+			$db->connect();
+		
+			$query = "update project set id_enterprise='$id_entreprise',name_project='$name_project',status_project= '$status_project',start_date_project='$start_date',tasks_project='$tasks' where id_project='$id_project';";
+				
+				
+			$conec= $db->getConnection();
+		
 			//In this case, the method return anything.
 			mysql_query($query, $conec) or die("ERROR: ".mysql_error());
 		}
