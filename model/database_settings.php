@@ -6,7 +6,7 @@ class data_base
 	private $server ="localhost";
 	//You need to modify with you parameters
 	private	$user ="root";
-	private $password ="cris21";
+	private $password ="toor";
 	private $database ="jr_enterprise";
 	
 	private $connection;
@@ -18,7 +18,14 @@ class data_base
 	
 	public function getConnection(){ 
 			return $this->connection;
-  	}	
+  	}
+
+	/**
+	* Release database connection link.
+	*/
+	public function close() {
+			mysql_close( $this->connection );
+	}
 }
 	
 ?>
