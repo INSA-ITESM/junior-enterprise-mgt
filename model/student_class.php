@@ -134,8 +134,8 @@ class student {
 		}
 
 		/* Fetch the row that matches */
-		$data = mysql_fetch_row($result);
-		if( !$data ) {
+		$row = mysql_fetch_row($result);
+		if( !$row ) {
 			$db->close();
 			throw new exception( "This student has not been found." );
 		}
@@ -174,7 +174,7 @@ class student {
 		/* For each row found, instantiate the object and then, push it into the array */
                 while( $row = mysql_fetch_array($res) ) {
 
-			$currentStudent = new student( $id, $row['url_photo_student'], $row['name_student'], $row['mail_student'], 
+			$currentStudent = new student( $row['id_student'], $row['url_photo_student'], $row['name_student'], $row['mail_student'], 
                                                 $row['cellphone_student'], $row['degree_student'], $row['semester_student'], 
                                                 $row['skill_student'], $row['areas_student'] );
 

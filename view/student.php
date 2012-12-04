@@ -26,8 +26,8 @@
       
       <div align="left">
         <a href="../controller/enterprise_controller.php" class="enterprises">Enterprises</a><br />
-        <a href="student.php" class="students">Students</a><br /> 
-        <a href="project.php" class="projects">Projects</a> <br />
+        <a href="../controller/student_controller.php" class="students">Students</a><br /> 
+        <a href="../controller/project_controller.php" class="projects">Projects</a> <br />
        </div>
   </div> <!--Close MENU -->
   

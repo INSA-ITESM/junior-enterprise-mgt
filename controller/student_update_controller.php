@@ -10,7 +10,7 @@
 	$skill = htmlspecialchars( mysql_escape_string( $_POST["skill"] ) );
 	$areas = htmlspecialchars( mysql_escape_string( $_POST["areas"] ) );
 
-	student::updateStudent( $id, '', $name, $mail, $cell, $degree, $semester, $skill, $areas )
+	student::updateStudent( $id, '', $name, $mail, $cell, $degree, $semester, $skill, $areas );
 	
 	header( "Location: ../controller/student_controller.php" );
 ?>

@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+require_once( "../model/student_class.php" );
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -21,8 +26,8 @@
       
       <div align="left">
         <a href="../controller/enterprise_controller.php" class="enterprises">Enterprises</a><br />
-        <a href="student.php" class="students">Students</a><br /> 
-        <a href="project.php" class="projects">Projects</a> <br />
+        <a href="../controller/student_controller.php" class="students">Students</a><br /> 
+        <a href="../controller/project_controller.php" class="projects">Projects</a> <br />
        </div>
   </div> <!--Close MENU -->
   
@@ -55,10 +60,32 @@
 
  <div id="information">
  <div name="div_dynamic" id="div_dynamic" class="div_dynamic">
-   <p>&nbsp;</p>
-   <p>&nbsp;</p>
-   <p>&nbsp;</p>
-   <pre>                                   INFORMATION HERE</pre>
+
+	<p>Select the student to delete from the system :</p>
+
+	<form method="post" action="../controller/student_terminate_controller.php">
+
+	  <div style="text-align: center;">
+		<select size="3" name="student">
+			
+		<?php
+			$array_students = unserialize($_SESSION['students']);
+
+			foreach( $array_students as $student ) {
+
+				echo "<option value=\"".$student->getId()."\">".$student->getName()."</option>";
+			}
+		?>
+
+		</select>
+
+		<br />
+
+		<input type="submit" value="Delete">	
+	  </div>
+
+	</form>
+
  </div>   
  </div>
  
